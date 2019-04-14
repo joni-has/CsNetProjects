@@ -1,0 +1,35 @@
+﻿@model JazzMusicians.Models.Musician
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div class="container">
+            <img src="@Url.Content(Model.Thumbnail)" height="100" />
+            <h4>Are you sure you want to delete this?</h4>
+
+            <ul class="list-inline">
+                <li style="font-weight:bold;">Name:</li>
+                @Html.DisplayFor(model => model.Name)
+            </ul>
+
+        </div>
+
+        <br />
+
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+<br /><br />
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</div>

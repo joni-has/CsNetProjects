@@ -1,0 +1,78 @@
+﻿@model IEnumerable<JazzMusicians.Models.Musician>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container heading-container">
+    <div class="heading">Influential Jazz Musicians From the 20th Century</div>
+</div>
+
+<hr />
+
+@Html.ActionLink("Add New Artist", "Create", null, new { @class="btn btn-default"})
+
+<br /><br />
+
+@using (Html.BeginForm())
+{
+    <p class="search">
+        Instruments: @Html.DropDownList("artistInstrument", "All")
+        Name: @Html.TextBox("searchName")
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+}
+
+<hr />
+
+<table class="table">
+    <tr class="table-header">
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Thumbnail)
+        </th>
+        <th class="text-center">
+            Artist Name
+        </th>
+        <th class="text-center">
+            Instrument(s)
+        </th>
+        <th class="text-center">
+            Years Active
+        </th>
+        <th class="text-center">
+            Actions
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+            
+        <td class="text-center">
+            <a href="@Url.Action("Profile", new { id = item.Id })">
+                <img src="@Url.Content(item.Thumbnail)" height="100" width="85" style="border:double; border-color:antiquewhite;"/>    
+            </a>  
+        </td>
+        <td class="text-center">
+            <a href="@Url.Action("Profile", new { id = item.Id })" style="color:antiquewhite">
+                @Html.DisplayFor(modelItem => item.Name)
+            </a>
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Instruments)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Years)
+        </td>
+        <td class="text-center">
+            <ul class="list-inline">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default"}) |
+                @Html.ActionLink("Profile", "Profile", new { id = item.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default" })
+            </ul>
+        </td>
+    </tr>
+}
+
+</table>

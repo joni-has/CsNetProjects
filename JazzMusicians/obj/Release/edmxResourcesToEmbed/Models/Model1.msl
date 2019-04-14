@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JazzMusicianModelStoreContainer" CdmEntityContainer="JazzMusicianEntities">
+    <EntitySetMapping Name="Musicians">
+      <EntityTypeMapping TypeName="JazzMusicianModel.Musician">
+        <MappingFragment StoreEntitySet="Musician">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Instruments" ColumnName="Instruments" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

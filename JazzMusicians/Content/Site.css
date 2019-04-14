@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: dimgrey;
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image:url(background.jpg);
+}
+
+/* padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: ThreeDDarkShadow;
+    color: antiquewhite;
+    opacity: 0.9;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.table {
+    background-color:ThreeDDarkShadow;
+    color:antiquewhite;
+}
+
+.table-header {
+    background-color: brown;
+    color: antiquewhite;
+}
+
+.btn-default {
+    background-color: ThreeDDarkShadow;
+    color:antiquewhite;
+}
+
+.profile {
+    padding: 20px;
+    background-color:ThreeDDarkShadow;
+    color: antiquewhite;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.name {
+    text-align: center;
+    font-size:16px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 40px;
+    color: antiquewhite;
+    text-shadow: 5px 5px 5px black;
+}
+
+.heading-container {
+    padding: 10px 0;
+}
+
+.search {
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.field-validationn-error {color: #f00;}
+.field-validation-valid {display: none;}
+.input-validation-error {border: 1px solid #f00; background-color: #fee; }
+.validation-summary-errors {font-weight: bold; color: #f00; }
+.validation-summary-valid {display: none; }

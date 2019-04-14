@@ -1,0 +1,51 @@
+﻿@model JazzMusicians.Models.Musician
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+<div class="container profile">
+    <h4>Musician</h4>
+    <hr />
+        <div class="col-md-2">
+                <img src="@Url.Content(Model.Thumbnail)" alt="Musician" height="200" style="border:groove"/>
+                <br /><br />
+                <p class="name">@Html.DisplayFor(model => model.Name)</p>
+        </div>
+    <div class="col-md-10">
+        <dl class="dl-horizontal">
+
+            <dt>
+                Biography:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)<br /><br />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Instruments):<br /><br />
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Instruments)<br /><br />
+            </dd>
+            <dt>
+                Years Active:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Years)<br /><br />
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" }) |
+
+    @*Since I couldn't use IEnumerable without affecting all the functions above, for the Edit button I
+    just had to using Model.Id instead of putting in a foreach loop and fetch out the data from there.*@
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+</div>
+
